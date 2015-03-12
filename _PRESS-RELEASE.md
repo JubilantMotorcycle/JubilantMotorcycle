@@ -28,6 +28,8 @@ Food enthusiasts can now share their finds with each other.
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
 Discover delicious food near you that's been vetted by a community of food enthusiasts.
 
+Tastebud is a way to find amazing food in your area faster than you ever imagined. Join a community of foodies sharing only their favorite dishes. Found something you love? Tastebud let's you snap a picture of it. Then we geo-tag it and make it easy for everyone to find and enjoy. No more reading through pages of Yelp reviews. No more looking for restaurants. Find food at the swipe of a screen. 
+
 ## Problem ##
   > Describe the problem your product solves.
 Services like Yelp are centered around the entire restaurant experience, not the food itself.
