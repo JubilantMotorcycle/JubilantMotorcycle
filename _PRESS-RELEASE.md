@@ -1,5 +1,5 @@
 # Project Name #
-
+Jubilant Motorcycle
 <!-- 
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
 
@@ -18,27 +18,36 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
+Tastebud
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+Food enthusiasts can now share their finds with each other.
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+Discover delicious food near you that's been vetted by a community of food enthusiasts.
 
 ## Problem ##
   > Describe the problem your product solves.
+Services like Yelp are centered around the entire restaurant experience, not the food itself.
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
+Tastebud focuses on the food itself. With users submitting only the food that they actually liked.
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+"Now you can share not just *what* you had, but *where*, so your friends can find the same restaurant and share your tasty experience!"
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
+Upload a photo of that delicious thing you ate and watch the Tastebud community love you for it.
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+"I discovered new food that I wouldn't have tried otherwise. Thanks, Tastebud!"
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+Download Tastebud today and discover the great dishes near you!
