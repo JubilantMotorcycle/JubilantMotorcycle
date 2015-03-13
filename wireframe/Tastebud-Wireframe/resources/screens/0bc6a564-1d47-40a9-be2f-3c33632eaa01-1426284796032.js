@@ -23,175 +23,6 @@ jQuery("#simulation")
       ];
       event.data = data;
       jEvent.launchCases(cases);
-    } else if(jFirer.is("#s-Button-black_1")) {
-      cases = [
-        {
-          "blocks": [
-            {
-              "actions": [
-                {
-                  "action": "jimChangeStyle",
-                  "parameter": [ {
-                    "#s-0bc6a564-1d47-40a9-be2f-3c33632eaa01 #s-Button-black_1": {
-                      "attributes": {
-                        "border-top-width": "1px",
-                        "border-top-style": "solid",
-                        "border-top-color": "#999999",
-                        "border-right-width": "1px",
-                        "border-right-style": "solid",
-                        "border-right-color": "#999999",
-                        "border-bottom-width": "1px",
-                        "border-bottom-style": "solid",
-                        "border-bottom-color": "#999999",
-                        "border-left-width": "1px",
-                        "border-left-style": "solid",
-                        "border-left-color": "#999999",
-                        "border-radius": "5px 5px 5px 5px",
-                        "padding-top": "3px",
-                        "padding-right": "3px",
-                        "padding-bottom": "3px",
-                        "padding-left": "3px",
-                        "font-size": "12.0pt",
-                        "font-family": "Roboto-Regular,Arial"
-                      },
-                      "expressions": {
-                        "width": "Math.max(34 - 1 - 1 - 3 - 3, 0) + 'px'",
-                        "height": "Math.max(34 - 1 - 1 - 3 - 3, 0) + 'px'"
-                      }
-                    }
-                  },{
-                    "#s-0bc6a564-1d47-40a9-be2f-3c33632eaa01 #s-Button-black_1 .valign": {
-                      "attributes": {
-                        "vertical-align": "middle",
-                        "text-align": "center"
-                      }
-                    }
-                  },{
-                    "#s-0bc6a564-1d47-40a9-be2f-3c33632eaa01 #s-Button-black_1 span": {
-                      "attributes": {
-                        "color": "#999999",
-                        "text-align": "center",
-                        "text-decoration": "none",
-                        "font-family": "Roboto-Regular,Arial",
-                        "font-size": "12.0pt"
-                      }
-                    }
-                  },{
-                    "#s-0bc6a564-1d47-40a9-be2f-3c33632eaa01 #s-Button-black_1": {
-                      "attributes-ie": {
-                        "border-top-width": "1px",
-                        "border-top-style": "solid",
-                        "border-top-color": "#999999",
-                        "border-right-width": "1px",
-                        "border-right-style": "solid",
-                        "border-right-color": "#999999",
-                        "border-bottom-width": "1px",
-                        "border-bottom-style": "solid",
-                        "border-bottom-color": "#999999",
-                        "border-left-width": "1px",
-                        "border-left-style": "solid",
-                        "border-left-color": "#999999",
-                        "border-radius": "5px 5px 5px 5px",
-                        "padding-top": "3px",
-                        "padding-right": "3px",
-                        "padding-bottom": "3px",
-                        "padding-left": "3px"
-                      },
-                      "expressions-ie": {
-                        "width": "Math.max(34 - 1 - 1 - 3 - 3, 0) + 'px'",
-                        "height": "Math.max(34 - 1 - 1 - 3 - 3, 0) + 'px'"
-                      }
-                    }
-                  } ]
-                },
-                {
-                  "action": "jimPause",
-                  "parameter": {
-                    "pause": 300
-                  }
-                },
-                {
-                  "action": "jimChangeStyle",
-                  "parameter": [ {
-                    "#s-0bc6a564-1d47-40a9-be2f-3c33632eaa01 #s-Button-black_1": {
-                      "attributes": {
-                        "border-top-width": "1px",
-                        "border-top-style": "solid",
-                        "border-top-color": "#404040",
-                        "border-right-width": "1px",
-                        "border-right-style": "solid",
-                        "border-right-color": "#404040",
-                        "border-bottom-width": "1px",
-                        "border-bottom-style": "solid",
-                        "border-bottom-color": "#404040",
-                        "border-left-width": "1px",
-                        "border-left-style": "solid",
-                        "border-left-color": "#404040",
-                        "border-radius": "5px 5px 5px 5px",
-                        "padding-top": "3px",
-                        "padding-right": "3px",
-                        "padding-bottom": "3px",
-                        "padding-left": "3px",
-                        "font-size": "12.0pt",
-                        "font-family": "Roboto-Regular,Arial"
-                      },
-                      "expressions": {
-                        "width": "Math.max(34 - 1 - 1 - 3 - 3, 0) + 'px'",
-                        "height": "Math.max(34 - 1 - 1 - 3 - 3, 0) + 'px'"
-                      }
-                    }
-                  },{
-                    "#s-0bc6a564-1d47-40a9-be2f-3c33632eaa01 #s-Button-black_1 .valign": {
-                      "attributes": {
-                        "vertical-align": "middle",
-                        "text-align": "center"
-                      }
-                    }
-                  },{
-                    "#s-0bc6a564-1d47-40a9-be2f-3c33632eaa01 #s-Button-black_1 span": {
-                      "attributes": {
-                        "color": "#434343",
-                        "text-align": "center",
-                        "text-decoration": "none",
-                        "font-family": "Roboto-Regular,Arial",
-                        "font-size": "12.0pt"
-                      }
-                    }
-                  },{
-                    "#s-0bc6a564-1d47-40a9-be2f-3c33632eaa01 #s-Button-black_1": {
-                      "attributes-ie": {
-                        "border-top-width": "1px",
-                        "border-top-style": "solid",
-                        "border-top-color": "#404040",
-                        "border-right-width": "1px",
-                        "border-right-style": "solid",
-                        "border-right-color": "#404040",
-                        "border-bottom-width": "1px",
-                        "border-bottom-style": "solid",
-                        "border-bottom-color": "#404040",
-                        "border-left-width": "1px",
-                        "border-left-style": "solid",
-                        "border-left-color": "#404040",
-                        "border-radius": "5px 5px 5px 5px",
-                        "padding-top": "3px",
-                        "padding-right": "3px",
-                        "padding-bottom": "3px",
-                        "padding-left": "3px"
-                      },
-                      "expressions-ie": {
-                        "width": "Math.max(34 - 1 - 1 - 3 - 3, 0) + 'px'",
-                        "height": "Math.max(34 - 1 - 1 - 3 - 3, 0) + 'px'"
-                      }
-                    }
-                  } ]
-                }
-              ]
-            }
-          ]
-        }
-      ];
-      event.data = data;
-      jEvent.launchCases(cases);
     } else if(jFirer.is("#s-Button-black")) {
       cases = [
         {
@@ -396,7 +227,7 @@ jQuery("#simulation")
       ];
       event.data = data;
       jEvent.launchCases(cases);
-    } else if(jFirer.is("#s-Button-black_2")) {
+    } else if(jFirer.is("#s-Label_119")) {
       cases = [
         {
           "blocks": [
@@ -406,7 +237,27 @@ jQuery("#simulation")
                   "action": "jimNavigation",
                   "parameter": {
                     "target": "screens/e6674634-79a3-46a2-88a4-a37252ee1aa6",
-                    "transition": "slideup"
+                    "transition": "slidedown"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ];
+      event.data = data;
+      jEvent.launchCases(cases);
+    } else if(jFirer.is("#s-Label_101")) {
+      cases = [
+        {
+          "blocks": [
+            {
+              "actions": [
+                {
+                  "action": "jimNavigation",
+                  "parameter": {
+                    "target": "screens/f9183345-a647-48e4-a861-9c1699f6d821",
+                    "transition": "slideright"
                   }
                 }
               ]

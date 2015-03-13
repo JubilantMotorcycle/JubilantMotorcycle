@@ -1,5 +1,6 @@
 (function(window, undefined) {
   var dictionary = {
+    "f9183345-a647-48e4-a861-9c1699f6d821": "Navigation",
     "d12245cc-1680-458d-89dd-4f0d7fb22724": "Loading",
     "b22f84c2-af77-4e3b-bb80-7ff14ea17a71": "Camera - Information",
     "e6674634-79a3-46a2-88a4-a37252ee1aa6": "Camera",
