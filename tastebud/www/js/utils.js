@@ -1,0 +1,1 @@
+// Helper functions to communicate with Firebase
