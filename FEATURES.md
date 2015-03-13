@@ -17,6 +17,12 @@
 ## PAGES ##
 - Signup
 - Login
+- Nav bar
+  - Discover
+  - Search (XC)
+    - Leads to a 9*9 scrolldown or probably a carousel
+  - My Account
+  - Logout
 - Homepage/ Discovery: Search meals near you (carousel)
   - Optional: choose a category
   - View one meal square pic at a time
@@ -27,7 +33,7 @@
       - XC: dislike (this, dish, place)
     - Tap for more info (price, comments, etc)
     - Swipe right/left to see new/old
-    - XC: fling
+    - XC: fling during rediscover
 - My account (tiled up to 9, scroll down for more)
   - Tap a "want" for more info
     - Ratings
