@@ -6,6 +6,10 @@
 /* or most probably just implement them by calling from the GeoBase library */
 /* stay tuned while we investigate! */
 
+// fbUrl is a variable in config.js . Best way to pull it in?
+var fBase = new Firebase(fbUrl);
+
+// Should we rewrite these function signatures to allow callbacks?
 /* no return*/
 var submitMeal = function(
   // an object {latitude: x, longitude: y}
