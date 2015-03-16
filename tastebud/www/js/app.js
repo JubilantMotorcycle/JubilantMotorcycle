@@ -22,13 +22,13 @@ angular.module('tastebud', ['ionic'])
 .directive('auth', function(){
   return {
     restrict: 'EA',
-    templateUrl: '../auth.html'
+    templateUrl: '../app/auth/auth.html'
   };
 })
 
 .directive('discovery', function(){
   return {
     restrict: 'EA',
-    templateUrl: '../discovery.html'
+    templateUrl: '../app/discovery/discovery.html'
   };
 });
