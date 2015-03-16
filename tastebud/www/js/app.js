@@ -16,19 +16,5 @@ angular.module('tastebud', ['ionic'])
       StatusBar.styleDefault();
     }
   });
-
-})
-
-.directive('auth', function(){
-  return {
-    restrict: 'EA',
-    templateUrl: '../app/auth/auth.html'
-  };
-})
-
-.directive('discovery', function(){
-  return {
-    restrict: 'EA',
-    templateUrl: '../app/discovery/discovery.html'
-  };
 });
+
