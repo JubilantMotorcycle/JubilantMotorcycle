@@ -45,14 +45,14 @@ p {
   height: 65px;
   width: 100%;
 }
-#header .menu {
+#header .more-menu {
   height: 65px;
   width: 20%;
   margin-top: 15px;
   float: left;
   text-align: center;
 }
-#header .menu img {
+#header .more-menu img {
   height: auto;
   width: 40%;
 }
