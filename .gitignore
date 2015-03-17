@@ -4,6 +4,7 @@ config.js
 
 bower_components/
 *.log
+tastebud/www/lib/
 
 build/
 dist/
