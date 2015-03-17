@@ -1,45 +1,53 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
   <head>
     <link href="style.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
   </head>
-  <body>
-    <div id="header">
-      <div class="navigation">
-        <span class="menu">
-          <img src="../../img/menu.png">
-        </span>
-        <span class="logo">
-          <img src="../../img/logo.png">
-        </span>
-        <span class="camera">
-          <img src="../../img/camera.png">
-        </span>
+  <body> -->
+    <ion-nav-bar>
+      <div id="header">
+        <div class="navigation">
+          <span class="menu">
+            <img src="../../img/menu.png">
+          </span>
+          <span class="logo">
+            <img src="../../img/logo.png">
+          </span>
+          <span class="camera">
+            <img src="../../img/camera.png">
+          </span>
+        </div>
       </div>
-    </div>
-    <div class="photo">
-      <img src="../../img/placeholder.png">
-    </div>
-    <div class="sub-bar">
-      <span class="distance">
-        <span class="location-icon">
-          <img src="../../img/location.png">
-        </span>
-        <span class="location-text">
-          located 1.5 miles away 
-        </span>
-      </span>
-    </div>
-    <div id="controls">
-      <div class="tasty">
-        <img src="../../img/tasty.png">
-      </div>
-      <div class="favorite">
-        <img src="../../img/favorite.png">
-      </div>
-    </div>
-    <div class="more-info">
+    </ion-nav-bar>
+    <ion-nav-view>
+      <ion-view view-title="My Page">
+        <ion-content>
+          <div class="photo">
+            <img src="../../img/placeholder.png">
+          </div>
+          <div class="sub-bar">
+            <span class="distance">
+              <span class="location-icon">
+                <img src="../../img/location.png">
+              </span>
+              <span class="location-text">
+                located 1.5 miles away 
+              </span>
+            </span>
+          </div>
+          <div id="controls">
+            <div class="tasty">
+              <img src="../../img/tasty.png">
+            </div>
+            <div class="favorite">
+              <img src="../../img/favorite.png">
+            </div>
+          </div>
+        </ion-content>
+      </ion-view>
+    </ion-nav-view>
+<!--     <div class="more-info">
       <div class="description">
         <span>
             <h2>Carne Asada Fries</h2>
@@ -88,3 +96,4 @@
     </script>
   </body>
 </html>
+ -->
