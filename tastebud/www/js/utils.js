@@ -7,7 +7,11 @@
 /* stay tuned while we investigate! */
 
 // fbUrl is a variable in config.js . Best way to pull it in?
-var fBase = new Firebase(fbUrl);
+
+
+var firebaseRef = new Firebase(fbUrl);
+
+var geoFire = new GeoFire(firebaseRef);
 
 // Should we rewrite these function signatures to allow callbacks?
 /* no return*/
@@ -28,6 +32,7 @@ var submitMeal = function(
 };
 
 /* returns an (array?) of mealIDs and pictures*/
+/* for MVP, simply give all */
 var getMeals = function(
   radius,
   location,
