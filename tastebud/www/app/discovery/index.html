@@ -1,43 +1,85 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link href="style.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-  </head>
-  <body>
-    <div id="header">
-      <div class="navigation">
-        <span class="menu">
-          <img src="../../img/menu.png">
-        </span>
-        <span class="logo">
-          <img src="../../img/logo.png">
-        </span>
-        <span class="camera">
-          <img src="../../img/camera.png">
-        </span>
-      </div>
-    </div>
-    <div id="photo">
-      <img src="../../img/placeholder.png">
-    </div>
-    <div id="sub-bar">
-      <span class="distance">
-        <span class="location-icon">
-          <img src="../../img/location.png">
-        </span>
-        <span class="location-text">
-          located 1.5 miles away 
-        </span>
+<body>
+  <link href="/app/discovery/style.css" rel="stylesheet">
+  <div id="header">
+    <div class="navigation">
+      <span class="menu">
+        <img src="../../img/menu.png">
+      </span>
+      <span class="logo">
+        <img src="../../img/logo.png">
+      </span>
+      <span class="camera">
+        <img src="../../img/camera.png">
       </span>
     </div>
-    <div id="controls">
-      <div class="tasty">
-        <img src="../../img/tasty.png">
-      </div>
-      <div class="favorite">
-        <img src="../../img/favorite.png">
-      </div>
+  </div>
+  <div class="photo">
+    <img src="../../img/placeholder.png">
+  </div>
+  <div class="sub-bar">
+    <span class="distance">
+      <span class="location-icon">
+        <img src="../../img/location.png">
+      </span>
+      <span class="location-text">
+        located 1.5 miles away 
+      </span>
+    </span>
+  </div>
+  <div id="controls">
+    <div class="tasty">
+      <img src="../../img/tasty.png">
     </div>
-  </body>
-</html>
+    <div class="favorite">
+      <img src="../../img/favorite.png">
+    </div>
+  </div>
+</body>
+
+<!-- <div class="more-info">
+    <div class="description">
+      <span>
+          <h2>Carne Asada Fries</h2>
+          <p>Category: Mexican</p>
+      </span>
+      <span>
+        <p>Roberto's Taco Joint</p>
+        <div class="ratings">
+          <span>
+            <h4>$$</h4>
+            <p>Price Range</p>
+          </span>
+          <span>
+            <h4>24</h4>
+            <p>Tasties</p>
+          </span>
+          <span>
+            <h4>05</h4>
+            <p>Favorites</p>
+          </span>
+        </div>
+      </span>
+      <span>
+        <div class="directions">
+          <span>
+            <p>Located: 844 Market St.</p>
+            <p>San Francisco, CA 91342</p>
+          </span>
+          <span>
+            <button>Map It</button>
+          </span>
+        </div>
+      </span>
+    </div>
+  </div>
+  <script src="../../lib/jquery/dist/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.photo').click(function(){
+        // event.defaultPrevented();
+        $('.more-info').slideToggle( "slow", function() {
+          // Animation complete.
+        });
+      });
+    });
+  </script> -->
