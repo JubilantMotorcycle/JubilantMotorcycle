@@ -1,5 +1,36 @@
-<body>
-  <link href="/app/discovery/style.css" rel="stylesheet">
+<ion-view title="Discovery">
+  <ion-content>
+    <!-- Associated Style Sheet -->
+    <link href="/app/discovery/style.css" rel="stylesheet">
+    <!-- Photo Scroll -->
+    <ion-scroll direction="x" class="available-scroller">
+      <div class="photo" collection-repeat="photo in app.photos"
+         item-height="250" item-width="photo.width + 30">
+         <img ng-src="{{photo.src}}">
+         <div class="sub-bar">
+           <span class="distance">
+             <span class="location-icon">
+               <img src="../../../img/location.png">
+             </span>
+             <span class="location-text">
+               {{photo.distance}}
+             </span>
+           </span>
+         </div>
+      </div>
+    </ion-scroll>
+    <!-- Controller Divs -->
+    <div id="controls">
+      <div class="tasty">
+        <img src="../../img/tasty.png">
+      </div>
+      <div class="favorite">
+        <img src="../../img/favorite.png">
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+<!-- <body>
   <div id="header">
     <div class="navigation">
       <span class="menu">
@@ -13,28 +44,7 @@
       </span>
     </div>
   </div>
-  <div class="photo">
-    <img src="../../img/placeholder.png">
-  </div>
-  <div class="sub-bar">
-    <span class="distance">
-      <span class="location-icon">
-        <img src="../../img/location.png">
-      </span>
-      <span class="location-text">
-        located 1.5 miles away 
-      </span>
-    </span>
-  </div>
-  <div id="controls">
-    <div class="tasty">
-      <img src="../../img/tasty.png">
-    </div>
-    <div class="favorite">
-      <img src="../../img/favorite.png">
-    </div>
-  </div>
-</body>
+</body> -->
 
 <!-- <div class="more-info">
     <div class="description">
