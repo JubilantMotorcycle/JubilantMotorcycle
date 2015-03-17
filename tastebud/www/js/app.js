@@ -18,13 +18,33 @@
 //   });
 // });
 
-var app = angular.module('ionicApp', ['ionic'])
+var app = angular.module('ionicApp', ['ionic']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/')
+  $urlRouterProvider.otherwise('/');
 
-  $stateProvider.state('home', {
+  $stateProvider.state('app.auth', {
+    url: '/auth',
+    templateUrl: 'app/partials/auth-partial.html',
+    controller: 'authCtrl'
+  });
+  
+  $stateProvider.state('app.home', {
     url: '/',
-    templateUrl: 'app/discovery/index.html'
-  })
-})
+    templateUrl: 'app/partials/discovery-partial.html',
+    controller: 'discoveryCtrl'
+  });
+
+  $stateProvider.state('app.discovery', {
+    url: '/discovery',
+    templateUrl: 'app/partials/discovery-partial.html',
+    controller: 'discoveryCtrl'
+  });
+
+  $stateProvider.state('app.submission', {
+    url: '/submission',
+    templateUrl: 'app/partials/submission-partial.html',
+    controller: 'submissionCtrl'
+  });
+
+});
