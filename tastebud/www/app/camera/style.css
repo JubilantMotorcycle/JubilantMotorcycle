@@ -7,6 +7,10 @@
   position: relative;
 }
 
+.div-center {
+  text-align: center;
+}
+
 h2 {
   font-family: Arial;
   font-size: 36px;
