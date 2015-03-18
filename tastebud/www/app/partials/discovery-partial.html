@@ -1,23 +1,19 @@
-<ion-view view-title="Discovery">
+<ion-view view-title="Discovery" no-scroll>
+  <ion-pane ng-controller="CardsCtrl">
   <ion-content>
     <!-- Associated Style Sheet -->
     <link href="/app/partials/discovery-style.css" rel="stylesheet">
     <!-- Photo Scroll -->
      <!-- <ion-scroll direction="x" class="available-scroller"> -->
-       <div class="photo" >
-          <img src="../img/placeholder.png">
-          <div class="sub-bar">
-            <span class="distance">
-              <span class="location-icon">
-                <img src="../../img/location.png">
-              </span>
-              <span class="location-text">
-                distance: {{photo.distance}} miles away
-              </span>
-            </span>
+      <td-cards>
+        <td-card ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)" class="card-{{$index}}">
+          <div class="image" ng-controller="CardCtrl">
+            <div class="no-text">NOPE</div>
+            <img ng-src="{{card.image}}">
+            <div class="yes-text">LIKE</div>
           </div>
-       </div>
-     <!-- </ion-scroll> -->
+        </td-card>
+      </td-cards>
     <!-- Controller Divs -->
     <div id="controls">
       <div class="tasty" ng-click="tasty()">
@@ -29,6 +25,7 @@
     </div>
     <!-- More Info -->
   </ion-content>
+  </ion-pane>
 </ion-view>
 <!-- <body>
   <div id="header">

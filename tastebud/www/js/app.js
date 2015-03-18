@@ -20,7 +20,6 @@ angular.module('ionicApp', ['ionic'])
       views: {
         'discover-tab': {
           templateUrl: "../app/partials/discovery-partial.html",
-          controller: 'discoveryCtrl'
         }
       }
     });
