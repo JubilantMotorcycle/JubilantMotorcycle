@@ -33,7 +33,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: "/shoot",
       views: {
         'camera-tab': {
-          templateUrl: "../app/partials/camera-shoot-partial.html"
+          templateUrl: "../app/partials/camera-shoot-partial.html",
+          controller: "cameraController", 
         }
       }
     })
