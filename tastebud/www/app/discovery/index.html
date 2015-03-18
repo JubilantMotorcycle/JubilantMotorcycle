@@ -4,8 +4,7 @@
     <link href="/app/discovery/style.css" rel="stylesheet">
     <!-- Photo Scroll -->
     <ion-scroll direction="x" class="available-scroller">
-      <div class="photo" collection-repeat="photo in app.photos"
-         item-height="250" item-width="photo.width + 30">
+      <div class="photo" collection-repeat="photo in app.photos">
          <img ng-src="{{photo.src}}">
          <div class="sub-bar">
            <span class="distance">
@@ -13,7 +12,7 @@
                <img src="../../../img/location.png">
              </span>
              <span class="location-text">
-               {{photo.distance}}
+               distance: {{photo.distance}} miles away
              </span>
            </span>
          </div>
@@ -21,10 +20,10 @@
     </ion-scroll>
     <!-- Controller Divs -->
     <div id="controls">
-      <div class="tasty">
+      <div class="tasty" ng-click="tasty()">
         <img src="../../img/tasty.png">
       </div>
-      <div class="favorite">
+      <div class="favorite"  ng-click="favorite()">
         <img src="../../img/favorite.png">
       </div>
     </div>
