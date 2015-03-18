@@ -12,7 +12,6 @@ angular.module('ionicApp', ['ionic'])
       views: {
         'discover-tab': {
           templateUrl: "../app/partials/auth-partial.html",
-          // controller: 'HomeTabCtrl'
         }
       }
     })
@@ -20,11 +19,11 @@ angular.module('ionicApp', ['ionic'])
       url: "/discovery",
       views: {
         'discover-tab': {
-          templateUrl: "../app/partials/discovery-partial.html"
+          templateUrl: "../app/partials/discovery-partial.html",
+          controller: 'discoveryCtrl'
         }
       }
     });
-    $urlRouterProvider.otherwise("/auth");
     $stateProvider
       .state('camera', {
         abstract: true,
@@ -55,10 +54,5 @@ angular.module('ionicApp', ['ionic'])
         }
       }
     });
-   $urlRouterProvider.otherwise("/camera/shoot");
-
-})
-
-.controller('HomeTabCtrl', function($scope) {
-  console.log('HomeTabCtrl');
+   $urlRouterProvider.otherwise("/auth");
 });

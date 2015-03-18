@@ -3,19 +3,21 @@
     <!-- Associated Style Sheet -->
     <link href="/app/partials/discovery-style.css" rel="stylesheet">
     <!-- Photo Scroll -->
-    <div class="photo">
-       <img ng-src="../../img/placeholder.png">
-       <div class="sub-bar">
-         <span class="distance">
-           <span class="location-icon">
-             <img src="../../img/location.png">
-           </span>
-           <span class="location-text">
-             distance: {{photo.distance}} miles away
-           </span>
-         </span>
+     <!-- <ion-scroll direction="x" class="available-scroller"> -->
+       <div class="photo" >
+          <img src="../img/placeholder.png">
+          <div class="sub-bar">
+            <span class="distance">
+              <span class="location-icon">
+                <img src="../../img/location.png">
+              </span>
+              <span class="location-text">
+                distance: {{photo.distance}} miles away
+              </span>
+            </span>
+          </div>
        </div>
-    </div>
+     <!-- </ion-scroll> -->
     <!-- Controller Divs -->
     <div id="controls">
       <div class="tasty" ng-click="tasty()">
@@ -26,6 +28,24 @@
       </div>
     </div>
     <!-- More Info -->
+  </ion-content>
+</ion-view>
+<!-- <body>
+  <div id="header">
+    <div class="navigation">
+      <span class="menu">
+        <img src="../../img/menu.png">
+      </span>
+      <span class="logo">
+        <img src="../../img/logo.png">
+      </span>
+      <span class="camera">
+        <img src="../../img/camera.png">
+      </span>
+    </div>
+  </div>
+</body> -->
+<!-- 
     <div class="more-info">
     <div class="description">
       <span>
@@ -73,37 +93,4 @@
       });
     });
   </script>
-  </ion-content>
-</ion-view>
-<!-- <body>
-  <div id="header">
-    <div class="navigation">
-      <span class="menu">
-        <img src="../../img/menu.png">
-      </span>
-      <span class="logo">
-        <img src="../../img/logo.png">
-      </span>
-      <span class="camera">
-        <img src="../../img/camera.png">
-      </span>
-    </div>
-  </div>
-</body> -->
-<!-- 
-    <ion-scroll direction="x" class="available-scroller">
-      <div class="photo" collection-repeat="photo in app.photos">
-         <img ng-src="{{photo.src}}">
-         <div class="sub-bar">
-           <span class="distance">
-             <span class="location-icon">
-               <img src="../../../img/location.png">
-             </span>
-             <span class="location-text">
-               distance: {{photo.distance}} miles away
-             </span>
-           </span>
-         </div>
-      </div>
-    </ion-scroll>
  -->
