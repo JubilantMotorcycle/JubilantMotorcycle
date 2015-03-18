@@ -1,7 +1,6 @@
-angular.module('ionicApp', ['ionic'])
+var app = angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards'])
 
-.config(function($stateProvider, $urlRouterProvider) {
-
+app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('app', {
       abstract: true,
@@ -20,6 +19,7 @@ angular.module('ionicApp', ['ionic'])
       views: {
         'discover-tab': {
           templateUrl: "../app/partials/discovery-partial.html",
+          controller: "CardsCtrl",
         }
       }
     });

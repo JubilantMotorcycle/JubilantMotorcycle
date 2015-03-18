@@ -1,19 +1,4 @@
-// Ionic Starter App, v0.9.20
-
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.services' is found in services.js
-// 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards'])
-
-
-.config(function($stateProvider, $urlRouterProvider) {
-
-})
-
-.directive('noScroll', function($document) {
-
+app.directive('noScroll', function($document) {
   return {
     restrict: 'A',
     link: function($scope, $element, $attr) {
@@ -23,9 +8,9 @@ angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards'])
       });
     }
   }
-})
+});
 
-.controller('CardsCtrl', function($scope, TDCardDelegate) {
+app.controller('CardsCtrl', function($scope, TDCardDelegate) {
   console.log('CARDS CTRL');
   var cardTypes = [
     { image: 'https://pbs.twimg.com/profile_images/546942133496995840/k7JAxvgq.jpeg' },
@@ -44,9 +29,9 @@ angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards'])
     newCard.id = Math.random();
     $scope.cards.push(angular.extend({}, newCard));
   }
-})
+});
 
-.controller('CardCtrl', function($scope, TDCardDelegate) {
+app.controller('CardCtrl', function($scope, TDCardDelegate) {
   $scope.cardSwipedLeft = function(index) {
     console.log('LEFT SWIPE');
     $scope.addCard();
