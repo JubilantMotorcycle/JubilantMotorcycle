@@ -64,6 +64,12 @@
       </span>
     </div>
   </div>
+  <script>
+    $(document).on("click", ".image", function() {
+        event.defaultPrevented();
+        $('.more-info').slideToggle();
+    });
+  </script>
   </td-cards>
   </ion-pane>
 </ion-view>
