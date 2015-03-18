@@ -5,16 +5,15 @@ td-cards {
 
 td-card {
   position: absolute;
-  left: 50%;
-  margin-top: 80px;
-  margin-bottom: 40px;
-  margin-left: -150px;
-  width: 300px;
-  height: 300px;
-
-  border: 1px solid #999;
-  box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 6px;
+  /*left: 50%;*/
+  margin-top: 42px;
+  margin-bottom: 0px;
+/*  margin-left: -180px;*/
+  width: 100%;
+  height: auto;
+  /*border: 1px solid #999;*/
+  /*box-shadow: 0px 1px 3px rgba(0,0,0,0.2);*/
+  /*border-radius: 6px;*/
 }
 /*
 td-card.card-0 {
@@ -41,7 +40,7 @@ td-card .image {
 
 td-card img {
   max-width: 100%;
-  border-radius: 6px;
+  /*border-radius: 6px;*/
 }
 
 .yes-text {
@@ -155,8 +154,8 @@ p {
 .sub-bar{
   width: 100%;
   height: 40px;
-  margin-top: 420px;
-  background-color: #98a7a3;
+  /*margin-top: 425px;*/
+  background-color: #387ef5;
   display: block;
 }
 .distance {
@@ -182,6 +181,7 @@ p {
 #controls {
   width: 100%;
   height: 100%;
+  padding-top: 475px;
   display: block;
 }
 #controls .tasty{

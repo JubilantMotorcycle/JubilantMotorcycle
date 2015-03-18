@@ -2,7 +2,6 @@ app.directive('noScroll', function($document) {
   return {
     restrict: 'A',
     link: function($scope, $element, $attr) {
-
       $document.on('touchmove', function(e) {
         e.preventDefault();
       });
@@ -13,9 +12,12 @@ app.directive('noScroll', function($document) {
 app.controller('CardsCtrl', function($scope, TDCardDelegate) {
   console.log('CARDS CTRL');
   var cardTypes = [
-    { image: 'https://pbs.twimg.com/profile_images/546942133496995840/k7JAxvgq.jpeg' },
-    { image: 'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png' },
-    { image: 'https://pbs.twimg.com/profile_images/491995398135767040/ie2Z_V6e.jpeg' },
+    { image: '../../img/food/carneasadafries.jpg',
+      distance: 5 },
+    { image: '../../img/food/curry.jpg',
+      distance: 20 },
+    { image: '../../img/food/tulan.jpg',
+      distance: 30 },
   ];
 
   $scope.cards = Array.prototype.slice.call(cardTypes, 0);

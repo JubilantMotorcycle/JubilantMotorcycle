@@ -1,4 +1,4 @@
-<!-- <ion-view view-title="Discovery" no-scroll> -->
+<ion-view view-title="Discovery" no-scroll>
   <ion-pane>
     <!-- Tinder Screens -->
     <td-cards>
@@ -8,46 +8,26 @@
           <img ng-src="{{card.image}}">
           <div class="yes-text">LIKE</div>
         </div>
-      </td-card>
-    </td-cards>
     <!-- Sub Bar Divs -->
-    <div class="sub-bar">
-      <span class="distance">
-        <span class="location-icon">
-          <img src="../../img/location.png">
-        </span>
-        <span class="location-text">
-          Distance: {{photo.distance}} miles away
-        </span>
-      </span>
-    </div>
-    <!-- Controller Divs -->
+        <div class="sub-bar">
+          <span class="distance">
+            <span class="location-icon">
+              <img src="../../img/location.png">
+            </span>
+            <span class="location-text">
+              Distance: {{card.distance}} miles away
+            </span>
+          </span>
+        </div>
+    </td-card>
     <div id="controls">
-      <div class="tasty" ng-click="tasty()">
+      <div class="tasty" ng-click="cardDestroyed($index)">
         <img src="../../img/tasty.png">
       </div>
-      <div class="favorite"  ng-click="favorite()">
+      <div class="favorite"  ng-click="cardDestroyed($index)">
         <img src="../../img/favorite.png">
       </div>
     </div>
-  </ion-pane>
-<!-- </ion-view> -->
-<!-- <body>
-  <div id="header">
-    <div class="navigation">
-      <span class="menu">
-        <img src="../../img/menu.png">
-      </span>
-      <span class="logo">
-        <img src="../../img/logo.png">
-      </span>
-      <span class="camera">
-        <img src="../../img/camera.png">
-      </span>
-    </div>
-  </div>
-</body> -->
-<!-- 
     <div class="more-info">
     <div class="description">
       <span>
@@ -84,15 +64,23 @@
       </span>
     </div>
   </div>
-  <script src="../../lib/jquery/dist/jquery.min.js"></script>
-  <script>
-    $(document).ready(function(){
-      $('.photo').click(function(){
-        // event.defaultPrevented();
-        $('.more-info').slideToggle( "slow", function() {
-          // Animation complete.
-        });
-      });
-    });
-  </script>
+  </td-cards>
+  </ion-pane>
+</ion-view>
+<!-- <body>
+  <div id="header">
+    <div class="navigation">
+      <span class="menu">
+        <img src="../../img/menu.png">
+      </span>
+      <span class="logo">
+        <img src="../../img/logo.png">
+      </span>
+      <span class="camera">
+        <img src="../../img/camera.png">
+      </span>
+    </div>
+  </div>
+</body> -->
+<!-- 
  -->
