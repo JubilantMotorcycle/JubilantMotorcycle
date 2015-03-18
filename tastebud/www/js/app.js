@@ -1,142 +1,64 @@
-// Ionic Starter App
+angular.module('ionicApp', ['ionic'])
 
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// angular.module('tastebud', ['ionic'])
+.config(function($stateProvider, $urlRouterProvider) {
 
-// .run(function($ionicPlatform) {
-//   $ionicPlatform.ready(function() {
-//     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-//     // for form inputs)
-//     if(window.cordova && window.cordova.plugins.Keyboard) {
-//       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-//     }
-//     if(window.StatusBar) {
-//       StatusBar.styleDefault();
-//     }
-//   });
-// });
-
-var app = angular.module('ionicApp', ['ionic'])
-
-app.config(function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/val/auth');
-
-  $stateProvider.state('app', {
+  $stateProvider
+    .state('app', {
       abstract: true,
-      url: "/val",
       templateUrl: "../app/partials/template.html"
-  })
-
-  .state('app.auth', {
-      url: '/auth',
+    })
+    .state('app.auth', {
+      url: "/auth",
       views: {
-        'auth': {
-          templateUrl: '../app/partials/auth-partial.html'
+        'discover-tab': {
+          templateUrl: "../app/partials/auth-partial.html",
+          // controller: 'HomeTabCtrl'
         }
       }
-  })
-
-  .state('app.discovery', {
-      url: '/discovery',
+    })
+    .state('app.discovery', {
+      url: "/discovery",
       views: {
-        'discovery': {
-          templateUrl: '../app/partials/discovery-partial.html'
+        'discover-tab': {
+          templateUrl: "../app/partials/discovery-partial.html"
         }
       }
-  });
-
-  $stateProvider.state('submission', {
-      abstract: true,
-      templateUrl: "../app/partials/submission-template.html"
-  })
-
-
-  .state('submission.camera', {
-    url: '/camera',
+    });
+    $urlRouterProvider.otherwise("/auth");
+    $stateProvider
+      .state('camera', {
+        abstract: true,
+        url: '/camera',
+        templateUrl: "../app/partials/template.html",
+    })
+    .state('camera.shoot', {
+      url: "/shoot",
       views: {
-        camera: {
-          'templateUrl': '../app/partials/submission-camera-partial.html'
+        'camera-tab': {
+          templateUrl: "../app/partials/camera-shoot-partial.html"
         }
       }
-  })
-
-  .state('submission.info', {
-    url: '/camera-info',
+    })
+    .state('camera.info', {
+      url: "/info",
       views: {
-        'cameraInfo': {
-          templateUrl: '../app/partials/submission-info-partial.html'
+        'camera-tab': {
+          templateUrl: "../app/partials/camera-info-partial.html"
         }
       }
-  })
-
-  .state('submission.done', {
-    url: '/camera-done',
+    })
+    .state('camera.success', {
+      url: "/success",
       views: {
-        'cameraDone': {
-          templateUrl: '../app/partials/submission-done-partial.html'
+        'camera-tab': {
+          templateUrl: "../app/partials/camera-success-partial.html"
         }
       }
-  });
+    });
+   $urlRouterProvider.otherwise("/camera/shoot");
 
+})
+
+.controller('HomeTabCtrl', function($scope) {
+  console.log('HomeTabCtrl');
 });
-
-app.factory('TodosService', function() {
-  var todos = [
-      {title: "Take out the trash", done: true},
-      {title: "Do laundry", done: false},
-      {title: "Start cooking dinner", done: false}
-   ]
-
-  return {
-    todos: todos,
-    getTodo: function(index) {
-      return todos[index]
-    }
-  }
-})
-
-app.controller('TodosCtrl', function($scope, TodosService) {
-  $scope.todos = TodosService.todos
-})
-
-app.controller('TodoCtrl', function($scope, todo) {
-  $scope.todo = todo
-})
-
-
-  // $stateProvider.state('app.auth', {
-  //   url: '',
-  //   views: {
-  //     auth: {
-  //       templateUrl: 'auth.html',
-  //       controller: 'authCtrl'
-  //     }
-  //   }
-  // });
-
-  // $stateProvider.state('app.auth', {
-  //   url: '/auth',
-  //   templateUrl: 'app/partials/auth-partial.html',
-  //   controller: 'authCtrl'
-  // });
-  
-  // $stateProvider.state('app.home', {
-  //   url: '/',
-  //   templateUrl: 'app/partials/discovery-partial.html',
-  //   controller: 'discoveryCtrl'
-  // });
-
-  // $stateProvider.state('app.discovery', {
-  //   url: '/discovery',
-  //   templateUrl: 'app/partials/discovery-partial.html',
-  //   controller: 'discoveryCtrl'
-  // });
-
-  // $stateProvider.state('app.submission', {
-  //   url: '/submission',
-  //   templateUrl: 'app/partials/submission-partial.html',
-  //   controller: 'submissionCtrl'
-  // });
-

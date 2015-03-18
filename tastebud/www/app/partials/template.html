@@ -1,11 +1,15 @@
 <ion-tabs class="tabs-icon-top tabs-positive">
 
-  <ion-tab title="Home" icon="ion-home" href="#/val/auth">
-    <ion-nav-view name="auth"></ion-nav-view>
+  <ion-tab title="Discver" icon="ion-home" href="#/discovery">
+    <ion-nav-view name="discover-tab"></ion-nav-view>
   </ion-tab>
 
-  <ion-tab title="About" icon="ion-ios-information" href="#/val/discovery">
-    <ion-nav-view name="discovery"></ion-nav-view>
+  <ion-tab title="Camera" icon="ion-ios-camera" href="#/camera">
+    <ion-nav-view name="camera-tab"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="Profile" icon="ion-ios-world" ui-sref="tabs.contact">
+    <ion-nav-view name="profile-tab"></ion-nav-view>
   </ion-tab>
 
 </ion-tabs>
