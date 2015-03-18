@@ -21,41 +21,27 @@
 var app = angular.module('ionicApp', ['ionic'])
 
 app.config(function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/auth')
-
-  // $stateProvider.state('app', {
-  //   abstract: true,
-  //   templateUrl: '../app/partials/template.html'
-  // });
-
-  // $stateProvider.state('app.todos', {
-  //   abstract: true,
-  //   url: '/todos',
-  //   views: {
-  //     todos: {
-  //       template: '<ion-nav-view></ion-nav-view>'
-  //     }
-  //   }
-  // });
+  $urlRouterProvider.otherwise('/val/auth');
 
   $stateProvider.state('app', {
       abstract: true,
+      url: "/val",
       templateUrl: "../app/partials/template.html"
-  });
+  })
 
-  $stateProvider.state('app.auth', {
+  .state('app.auth', {
       url: '/auth',
       views: {
-        auth: {
+        'auth': {
           templateUrl: '../app/partials/auth-partial.html'
         }
       }
-  });
+  })
 
-  $stateProvider.state('app.discovery', {
+  .state('app.discovery', {
       url: '/discovery',
       views: {
-        discovery: {
+        'discovery': {
           templateUrl: '../app/partials/discovery-partial.html'
         }
       }
@@ -64,56 +50,37 @@ app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider.state('submission', {
       abstract: true,
       templateUrl: "../app/partials/submission-template.html"
-  });
+  })
 
 
-  $stateProvider.state('submission.camera', {
+  .state('submission.camera', {
     url: '/camera',
       views: {
         camera: {
-          templateUrl: '../app/partials/submission-camera-partial.html'
+          'templateUrl': '../app/partials/submission-camera-partial.html'
         }
       }
-  });
+  })
 
-  $stateProvider.state('submission.info', {
+  .state('submission.info', {
     url: '/camera-info',
       views: {
-        cameraInfo: {
+        'cameraInfo': {
           templateUrl: '../app/partials/submission-info-partial.html'
         }
       }
-  });
+  })
 
-  $stateProvider.state('submission.done', {
+  .state('submission.done', {
     url: '/camera-done',
       views: {
-        cameraDone: {
+        'cameraDone': {
           templateUrl: '../app/partials/submission-done-partial.html'
         }
       }
   });
 
-  });
-
-    // $stateProvider.state('app.todos.index', {
-    //   url: '',
-    //   templateUrl: 'todos.html',
-    //   controller: 'TodosCtrl'
-    // })
-
-    // $stateProvider.state('app.todos.detail', {
-    //   url: '/:todo',
-    //   templateUrl: 'todo.html',
-    //   controller: 'TodoCtrl',
-    //   resolve: {
-    //     todo: function($stateParams, TodosService) {
-    //       return TodosService.getTodo($stateParams.todo)
-    //     }
-    //   }
-    // })
-
-})
+});
 
 app.factory('TodosService', function() {
   var todos = [

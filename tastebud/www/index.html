@@ -4,36 +4,45 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+<!--     <link href="lib/ionic/css/ionic.css" rel="stylesheet"> -->
     <link href="css/style.css" rel="stylesheet">
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
     <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+    <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script type="text/javascript" charset="utf-8" src="../node_modules/cordova/cordova.js"></script>
 
-    <!-- GeoFire requires RSVP -->
+    <!-- GeoFire requires RSVP
     <script src="rsvp.min.js"></script>
-
-    <!-- Firebase clientside -->
+     -->
+    <!-- Firebase clientside
     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
-
-    <!-- GeoFire -->
+    -->
+    <!-- GeoFire
     <script src="https://cdn.firebase.com/libs/geofire/3.2.2/geofire.min.js"></script>
-
+    -->
     <!-- Add these js files -->
+    <!-- 
     <script src="app/controllers/authCtrl.js"></script>
     <script src="app/controllers/discoveryCtrl.js"></script>
     <script src="app/controllers/submissionCtrl.js"></script>
+    -->
     <script src="js/app.js"></script>
+    <!-- 
     <script src="js/config.js"></script>
     <script src="js/utils.js"></script>
+    -->
   </head>
   <body>
-     <ion-nav-view></ion-nav-view>
+    <ion-nav-bar class="bar-positive">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view></ion-nav-view>
   </body>
 </html>
