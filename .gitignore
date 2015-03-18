@@ -2,6 +2,9 @@
 
 config.js
 
+### for test builds ###
+test.html
+
 bower_components/
 *.log
 
