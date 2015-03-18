@@ -2,7 +2,9 @@
 <ion-view view-title="Camera">
   <ion-content class="padding">
     <p>
-      <a class="button icon icon-right ion-chevron-right" href="#/camera/info">Go to Info</a>
+      <!-- <a class="button icon icon-right ion-chevron-right" href="#/camera/info">Go to Info</a> -->
     </p>
+    <button ng-click="getPhoto()" class="button button-block button-primary">Take Photo</button>
+      <img ng-src="{{lastPhoto}}" style="max-width: 100%">
   </ion-content>
 </ion-view>
