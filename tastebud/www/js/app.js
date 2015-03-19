@@ -100,6 +100,7 @@ app.controller("FirebaseController", function($scope, $state, $firebaseAuth) {
   $scope.fblogin = function() {
     fbAuth.$authWithOAuthPopup("facebook").then(function(authData) {
       $state.go("app.discovery");
+      // console.log("Logged in as:", authData.uid);
     }).catch(function(error) {
       console.log("Authentication failed:", error);
     });
@@ -139,9 +140,11 @@ app.controller('CardsCtrl', function($scope, $ionicHistory, $firebaseArray, TDCa
 
   var fbAuth = fb.getAuth();
   if(fbAuth) {
-      var userReference = fb.child("users/" + fbAuth.uid);
-      var syncArray = $firebaseArray(userReference.child("images"));
-      $scope.images = syncArray;
+    var imageRef = fb.child("tasties/");
+    // var userReference = fb.child("users/" + fbAuth.uid);
+    var syncArray = $firebaseArray(imageRef.child("images"));
+    // var syncArray = $firebaseArray(userReference.child("images"));
+    $scope.images = syncArray;
   } else {
       $state.go("app.auth");
   }
@@ -183,8 +186,10 @@ app.controller("SecureController", function($scope, $ionicHistory, $firebaseArra
   var fbAuth = fb.getAuth();
 
   if(fbAuth) {
-    var userReference = fb.child("users/" + fbAuth.uid);
-    var syncArray = $firebaseArray(userReference.child("images"));
+    var imageRef = fb.child("tasties/");
+    // var userReference = fb.child("users/" + fbAuth.uid);
+    var syncArray = $firebaseArray(imageRef.child("images"));
+    // var syncArray = $firebaseArray(userReference.child("images"));
     $scope.images = syncArray;
   } else {
     $state.go("app.auth");
