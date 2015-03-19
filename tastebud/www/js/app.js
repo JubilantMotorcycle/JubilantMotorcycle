@@ -2,6 +2,14 @@ var app = angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards', 'n
 
 var fb = new Firebase("https://sizzling-fire-8874.firebaseio.com/");
 
+// fb.authWithOAuthPopup("facebook", function(error, authData) {
+//   if (error) {
+//     console.log("Login Failed!", error);
+//   } else {
+//     console.log("Authenticated successfully with payload:", authData);
+//   }
+// });
+
 app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -87,6 +95,15 @@ app.directive('noScroll', function($document) {
 app.controller("FirebaseController", function($scope, $state, $firebaseAuth) {
 
   var fbAuth = $firebaseAuth(fb);
+
+  // login with Facebook
+  $scope.fblogin = function() {
+    fbAuth.$authWithOAuthPopup("facebook").then(function(authData) {
+      $state.go("app.discovery");
+    }).catch(function(error) {
+      console.log("Authentication failed:", error);
+    });
+  };
 
   $scope.login = function(username, password) {
     fbAuth.$authWithPassword({
