@@ -1,8 +1,21 @@
 <!-- PLACE AUTHENTICATION VIEW HERE -->
-<ion-view view-title="Authentication">
-  <ion-content class="padding">
-    <p>
-      <a class="button icon icon-right ion-chevron-right" href="#/discovery">Login with Facebook</a>
-    </p>
-  </ion-content>
+<ion-view title="Login">
+    <ion-content>
+        <div>
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <input ng-model="username" type="text" placeholder="Username" />
+                </label>
+                <label class="item item-input">
+                    <input ng-model="password" type="password" placeholder="Password" />
+                </label>
+            </div>
+            <div class="padding-left padding-right">
+                <div class="button-bar">
+                    <a class="button" ng-click="login(username, password)">Login</a>
+                    <a class="button" ng-click="register(username, password)">Register</a>
+                </div>
+            </div>
+        </div>
+    </ion-content>
 </ion-view>

@@ -1,10 +1,17 @@
-<!-- PLACE AUTHENTICATION VIEW HERE -->
-<ion-view view-title="Camera">
-  <ion-content class="padding">
-    <p>
-      <!-- <a class="button icon icon-right ion-chevron-right" href="#/camera/info">Go to Info</a> -->
-    </p>
-    <button ng-click="getPhoto()" class="button button-block button-primary">Take Photo</button>
-      <img ng-src="{{lastPhoto}}" style="max-width: 100%">
-  </ion-content>
+<ion-view title="My Images" ng-init="">
+    <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-camera" ng-click="upload()"></button>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="row">
+            <div>
+                <img ng-src="data:image/jpeg;base64,{{images[0].image}}" width="100%" />
+            </div>
+        </div>
+        <a href="#/info">
+          <button class="button button-outline button-positive">
+            Next
+          </button>
+        </a>
+    </ion-content>
 </ion-view>
