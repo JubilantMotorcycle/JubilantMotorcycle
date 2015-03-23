@@ -8,7 +8,7 @@ angular.module('starter')
     var img = "";
     // sett info
     var setLat = function(val){lat = val;};
-    var setLon = function(val){lat = val;};
+    var setLon = function(val){lon = val;};
     var setDish = function(val){dish = val;};
     var setBizName = function(val){bizName = val;};
     var setPrice = function(val){price = val};
@@ -57,10 +57,10 @@ angular.module('starter')
         $cordovaGeolocation
           .getCurrentPosition()
           .then(function (position) {
+            alert(position.coords.latitude);
             GeoFactory.setLat(position.coords.latitude);
-            console.log(position.coords.latitude);
+            alert(position.coords.longitude);
             GeoFactory.setLon(position.coords.longitude);
-            console.log(position.coords.longitude);
           }, function(err) {
             console.log('centerOnMe() failure');
           });
