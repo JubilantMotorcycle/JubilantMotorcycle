@@ -1,4 +1,4 @@
-var app = angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards', 'ngCordova', 'firebase']);
+var app = angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards', 'ngCordova', 'firebase', 'ngMap']);
 
 var fb = new Firebase(fbUrl);
 
@@ -83,6 +83,3 @@ app.directive('noScroll', function($document) {
     }
   }
 });
-
-
-
