@@ -83,6 +83,3 @@ app.directive('noScroll', function($document) {
     }
   }
 });
-
-
-
