@@ -20,6 +20,13 @@ angular.module('starter')
 
     //submission
     $scope.submit = function() {
+
+      geoFire.set("" + $scope.images.length, [GeoFactory.getLat(), GeoFactory.getLon()]).then(function() {
+        console.log("Provided key has been added to GeoFire");
+      }, function(error) {
+        console.log("Error: " + error);
+      });
+      
       syncArray.$add({
         id: $scope.images.length,
         image: GeoFactory.getImg(),

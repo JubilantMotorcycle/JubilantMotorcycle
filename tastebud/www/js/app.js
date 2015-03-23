@@ -2,6 +2,9 @@ var app = angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards', 'n
 
 var fb = new Firebase(fbUrl);
 
+// Create a new GeoFire instance, pulling data from the public transit data
+var geoFire = new GeoFire(fb.child("tasties/geofire"));
+
 app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
