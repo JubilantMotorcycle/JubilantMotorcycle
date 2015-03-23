@@ -2,8 +2,8 @@ angular.module('starter')
   .factory('GeoFactory', function(){
     var lat = 0;
     var lon = 0;
-    var dish = "";
-    var bizName = "";
+    var dish = "default-dish";
+    var bizName = "default-name";
     var price = "$";
     var img = "";
     // sett info
@@ -57,9 +57,9 @@ angular.module('starter')
         $cordovaGeolocation
           .getCurrentPosition()
           .then(function (position) {
-            alert(position.coords.latitude);
+            // alert(position.coords.latitude);
             GeoFactory.setLat(position.coords.latitude);
-            alert(position.coords.longitude);
+            // alert(position.coords.longitude);
             GeoFactory.setLon(position.coords.longitude);
           }, function(err) {
             console.log('centerOnMe() failure');
@@ -117,9 +117,9 @@ angular.module('starter')
       };
       $cordovaCamera.getPicture(options).then(function(imageData) {
         GeoFactory.setImg(imageData);
-        alert(GeoFactory.getImg());
-        alert(GeoFactory.getLat());
-        alert(GeoFactory.getLon());
+        // alert(GeoFactory.getImg());
+        // alert(GeoFactory.getLat());
+        // alert(GeoFactory.getLon());
         // syncArray.$add({
         //   image: imageData
         // }).then(function() {
@@ -131,7 +131,3 @@ angular.module('starter')
     }
 
   });
-
-  // .controller('MarkerRemoveCtrl', function($scope, $ionicLoading) {
-    
-  // });

@@ -58,7 +58,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: "/info",
       views: {
         'camera-tab': {
-          templateUrl: "app/partials/camera-info-partial.html"
+          templateUrl: "app/partials/camera-info-partial.html",
+          controller: "DetailsCtrl",
         }
       }
     })
