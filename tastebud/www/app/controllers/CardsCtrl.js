@@ -1,5 +1,5 @@
 angular.module('starter')
-.controller('CardsCtrl', function($scope, $ionicHistory, $firebase, $firebaseArray, TDCardDelegate) {
+.controller('CardsCtrl', function($scope, $ionicHistory, $firebase, $firebaseArray, GeoFactory, TDCardDelegate) {
 
   $ionicHistory.clearHistory();
 
@@ -17,10 +17,10 @@ angular.module('starter')
       $scope.images = syncArray;
 
       var locations = {
-        "FirebaseHQ": [37.7838175, -122.40924629999998],
+        "current": [37.7838175, -122.40924629999998],
       };
 
-      var center = locations["FirebaseHQ"];
+      var center = locations["current"];
 
       // Query radius
       var radiusInKm = 1.6;
@@ -34,6 +34,7 @@ angular.module('starter')
       geoQuery.on("key_entered", function(key, location, distance) {
         var keyL = $scope.images.$keyAt(parseInt(key));
         var memo = $scope.images.$getRecord(keyL);
+        memo.miles = (distance / 1.6).toFixed(2);
         $scope.cards.push(memo);
       });
 
