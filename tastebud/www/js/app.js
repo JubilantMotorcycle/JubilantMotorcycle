@@ -26,7 +26,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       views: {
         'discover-tab': {
           templateUrl: "app/partials/auth-partial.html",
-          controller: "FirebaseController",
+          controller: "FirebaseCtrl",
           cache: false,
         }
       }
@@ -50,7 +50,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       views: {
         'camera-tab': {
           templateUrl: "app/partials/camera-shoot-partial.html",
-          controller: "SecureController",
+          controller: "SecureCtrl",
         }
       }
     })
@@ -84,135 +84,5 @@ app.directive('noScroll', function($document) {
   }
 });
 
-app.controller("FirebaseController", function($scope, $state, $firebaseAuth) {
 
-  var fbAuth = $firebaseAuth(fb);
 
-  $scope.fblogin = function() {
-    fbAuth.$authWithOAuthPopup("facebook").then(function(authData) {
-      $state.go("app.discovery");
-      // console.log("Logged in as:", authData.uid);
-    }).catch(function(error) {
-      console.log("Authentication failed:", error);
-    });
-  };
-
-  $scope.login = function(username, password) {
-    fbAuth.$authWithPassword({
-        email: username,
-        password: password
-    }).then(function(authData) {
-        $state.go("app.discovery");
-    }).catch(function(error) {
-        console.error("ERROR: " + error);
-    });
-  }
-
-  $scope.register = function(username, password) {
-    fbAuth.$createUser({email: username, password: password}).then(function(userData) {
-        return fbAuth.$authWithPassword({
-            email: username,
-            password: password
-        });
-    }).then(function(authData) {
-        $state.go("app.discovery");
-    }).catch(function(error) {
-        console.error("ERROR: " + error);
-    });
-  }
-
-});
-
-app.controller('CardsCtrl', function($scope, $ionicHistory, $firebaseArray, TDCardDelegate) {
-  console.log('CARDS CTRL');
-  $ionicHistory.clearHistory();
-
-  $scope.images = [];
-
-  var fbAuth = fb.getAuth();
-  if(fbAuth) {
-    var imageRef = fb.child("tasties/");
-    // var userReference = fb.child("users/" + fbAuth.uid);
-    var syncArray = $firebaseArray(imageRef.child("images"));
-    // var syncArray = $firebaseArray(userReference.child("images"));
-    $scope.images = syncArray;
-  } else {
-      $state.go("app.auth");
-  }
-
-  $scope.cards = $scope.images;
-
-  console.log('array', $scope.cards);
-  // Array.prototype.slice.call($scope.images, 0);
-
-  $scope.cardDestroyed = function(index) {
-    $scope.cards.splice(index, 1);
-  };
-  $scope.cardRemove = function() {
-    $scope.cards.splice($scope.cards.length-1, 1);
-  };
-
-  // $scope.addCard = function() {
-  //   var newCard = $scope.images[Math.floor(Math.random() * $scope.images.length)];
-  //   newCard.id = Math.random();
-  //   $scope.cards.push(angular.extend({}, newCard));
-  // }
-});
-
-app.controller('CardCtrl', function($scope, TDCardDelegate) {
-  $scope.cardSwipedLeft = function(index) {
-    console.log('LEFT SWIPE');
-    // $scope.addCard();
-  };
-  $scope.cardSwipedRight = function(index) {
-    console.log('RIGHT SWIPE');
-    // $scope.addCard();
-  };
-});
-
-app.controller("SecureController", function($scope, $ionicHistory, $firebaseArray, $cordovaCamera) {
-
-  $ionicHistory.clearHistory();
-
-  $scope.images = [];
-
-  var fbAuth = fb.getAuth();
-
-  if(fbAuth) {
-    console.log('u');
-    var imageRef = fb.child("tasties/");
-    // var userReference = fb.child("users/" + fbAuth.uid);
-    var syncArray = $firebaseArray(imageRef.child("images"));
-    // var syncArray = $firebaseArray(userReference.child("images"));
-    $scope.images = syncArray;
-  } else {
-    $state.go("app.auth");
-  }
-
-  $scope.upload = function() {
-
-    // var carne = 'hi';
-    // syncArray.$add({image: carne}).then(function() {
-    //       alert("Image has been uploaded");
-    // });
-    var options = {
-      quality : 75,
-      destinationType : Camera.DestinationType.DATA_URL,
-      sourceType : Camera.PictureSourceType.CAMERA,
-      allowEdit : true,
-      encodingType: Camera.EncodingType.JPEG,
-      popoverOptions: CameraPopoverOptions,
-      targetWidth: 500,
-      targetHeight: 500,
-      saveToPhotoAlbum: false
-    };
-    $cordovaCamera.getPicture(options).then(function(imageData) {
-      syncArray.$add({image: imageData}).then(function() {
-          alert("Image has been uploaded");
-      });
-    }, function(error) {
-      console.error(error);
-    });
-  }
-
-});
