@@ -1,3 +1,5 @@
+// This file is not currently used
+
 // Helper functions to communicate with Firebase
 
 /* NOTE: This may all change if we incorporate the GeoBase library Jason found */

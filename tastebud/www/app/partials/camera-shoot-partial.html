@@ -1,0 +1,17 @@
+<ion-view title="My Images" ng-init="">
+    <ion-content>
+        <div class="row">
+            <div>
+                <img ng-src="data:image/jpeg;base64,{{images[0].image}}" width="100%" />
+            </div>
+        </div>
+        <button class="button button-outline button-assertive" ng-click="upload()">Take a Photo</button>
+        <div class="row responsive-sm">
+          <div class="col">
+            <div class="button-bar">
+              <a class="button button-outline button-assertive" href="#/info">Next</a>
+            </div>
+          </div>
+        </div>
+    </ion-content>
+</ion-view>
