@@ -1,18 +1,20 @@
 <ion-view view-title="Discovery" no-scroll>
   <ion-pane>
     <!-- Tinder Screens -->
+    <!-- <img ng-src="data:image/jpeg;base64,{{images[0].image}}" /> -->
+      <!-- <img ng-src="data:image/jpeg;base64,{{images[0].image}}" /> -->
     <td-cards>
       <td-card ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)" class="card-{{$index}}">
         <div class="image" ng-controller="CardCtrl">
           <div class="no-text">NOPE</div>
-          <img ng-src="{{card.image}}">
+          <img ng-src="data:image/jpeg;base64,{{card.image}}" />
           <div class="yes-text">LIKE</div>
         </div>
     <!-- Sub Bar Divs -->
         <div class="sub-bar">
           <span class="distance">
             <span class="location-icon">
-              <img src="../../img/location.png">
+              <img src="img/location.png">
             </span>
             <span class="location-text">
               Distance: {{card.distance}} miles away
@@ -21,11 +23,11 @@
         </div>
     </td-card>
     <div id="controls">
-      <div class="tasty" ng-click="cardDestroyed($index)">
-        <img src="../../img/tasty.png">
+      <div class="tasty" ng-click="cardRemove()">
+        <img src="img/tasty.png">
       </div>
-      <div class="favorite"  ng-click="cardDestroyed($index)">
-        <img src="../../img/favorite.png">
+      <div class="favorite"  ng-click="cardRemove()">
+        <img src="img/favorite.png">
       </div>
     </div>
     <div class="more-info">
