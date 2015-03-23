@@ -1,47 +1,48 @@
 angular.module('starter')
-.controller("SecureCtrl", function($scope, $ionicHistory, $firebaseArray, $cordovaCamera) {
+  .controller("SecureCtrl", function($scope, $ionicHistory, $firebaseArray, $cordovaCamera) {
 
-  $ionicHistory.clearHistory();
+    $ionicHistory.clearHistory();
 
-  $scope.images = [];
+    $scope.images = [];
 
-  var fbAuth = fb.getAuth();
+    var fbAuth = fb.getAuth();
 
-  if(fbAuth) {
-    console.log('u');
-    var imageRef = fb.child("tasties/");
-    // var userReference = fb.child("users/" + fbAuth.uid);
-    var syncArray = $firebaseArray(imageRef.child("images"));
-    // var syncArray = $firebaseArray(userReference.child("images"));
-    $scope.images = syncArray;
-  } else {
-    $state.go("app.auth");
-  }
+    if (fbAuth) {
+      var imageRef = fb.child("tasties/images").limitToLast(1);
+      // var userReference = fb.child("users/" + fbAuth.uid);
+      var syncArray = $firebaseArray(imageRef);
+      // var syncArray = $firebaseArray(userReference.child("images"));
+      $scope.images = syncArray;
+    } else {
+      $state.go("app.auth");
+    }
 
-  $scope.upload = function() {
+    $scope.upload = function() {
 
-    // var carne = 'hi';
-    // syncArray.$add({image: carne}).then(function() {
-    //       alert("Image has been uploaded");
-    // });
-    var options = {
-      quality : 75,
-      destinationType : Camera.DestinationType.DATA_URL,
-      sourceType : Camera.PictureSourceType.CAMERA,
-      allowEdit : true,
-      encodingType: Camera.EncodingType.JPEG,
-      popoverOptions: CameraPopoverOptions,
-      targetWidth: 500,
-      targetHeight: 500,
-      saveToPhotoAlbum: false
-    };
-    $cordovaCamera.getPicture(options).then(function(imageData) {
-      syncArray.$add({image: imageData}).then(function() {
+      // var carne = 'hi';
+      // syncArray.$add({image: carne}).then(function() {
+      //       alert("Image has been uploaded");
+      // });
+      var options = {
+        quality: 75,
+        destinationType: Camera.DestinationType.DATA_URL,
+        sourceType: Camera.PictureSourceType.CAMERA,
+        allowEdit: true,
+        encodingType: Camera.EncodingType.JPEG,
+        popoverOptions: CameraPopoverOptions,
+        targetWidth: 500,
+        targetHeight: 500,
+        saveToPhotoAlbum: false
+      };
+      $cordovaCamera.getPicture(options).then(function(imageData) {
+        syncArray.$add({
+          image: imageData
+        }).then(function() {
           alert("Image has been uploaded");
+        });
+      }, function(error) {
+        console.error(error);
       });
-    }, function(error) {
-      console.error(error);
-    });
-  }
+    }
 
-});
+  });
