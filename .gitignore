@@ -36,6 +36,7 @@ coverage
 # Compiled Dirs (http://nodejs.org/api/addons.html)
 build/
 dist/
+tastebud/www/lib/
 
 # Dependency directorys
 # Deployed apps should consider commenting these lines out:
