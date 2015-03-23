@@ -1,6 +1,6 @@
 var app = angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards', 'ngCordova', 'firebase']);
 
-var fb = new Firebase("https://sizzling-fire-8874.firebaseio.com/");
+var fb = new Firebase(fbUrl);
 
 app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
