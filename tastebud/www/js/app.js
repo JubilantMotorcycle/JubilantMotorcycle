@@ -2,14 +2,6 @@ var app = angular.module('starter', ['ionic', 'ionic.contrib.ui.tinderCards', 'n
 
 var fb = new Firebase("https://sizzling-fire-8874.firebaseio.com/");
 
-// fb.authWithOAuthPopup("facebook", function(error, authData) {
-//   if (error) {
-//     console.log("Login Failed!", error);
-//   } else {
-//     console.log("Authenticated successfully with payload:", authData);
-//   }
-// });
-
 app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -96,7 +88,6 @@ app.controller("FirebaseController", function($scope, $state, $firebaseAuth) {
 
   var fbAuth = $firebaseAuth(fb);
 
-  // login with Facebook
   $scope.fblogin = function() {
     fbAuth.$authWithOAuthPopup("facebook").then(function(authData) {
       $state.go("app.discovery");
@@ -150,6 +141,8 @@ app.controller('CardsCtrl', function($scope, $ionicHistory, $firebaseArray, TDCa
   }
 
   $scope.cards = $scope.images;
+
+  console.log('array', $scope.cards);
   // Array.prototype.slice.call($scope.images, 0);
 
   $scope.cardDestroyed = function(index) {
@@ -186,6 +179,7 @@ app.controller("SecureController", function($scope, $ionicHistory, $firebaseArra
   var fbAuth = fb.getAuth();
 
   if(fbAuth) {
+    console.log('u');
     var imageRef = fb.child("tasties/");
     // var userReference = fb.child("users/" + fbAuth.uid);
     var syncArray = $firebaseArray(imageRef.child("images"));
@@ -196,6 +190,11 @@ app.controller("SecureController", function($scope, $ionicHistory, $firebaseArra
   }
 
   $scope.upload = function() {
+
+    // var carne = 'hi';
+    // syncArray.$add({image: carne}).then(function() {
+    //       alert("Image has been uploaded");
+    // });
     var options = {
       quality : 75,
       destinationType : Camera.DestinationType.DATA_URL,
@@ -215,4 +214,5 @@ app.controller("SecureController", function($scope, $ionicHistory, $firebaseArra
       console.error(error);
     });
   }
+
 });
