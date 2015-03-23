@@ -2,13 +2,13 @@ angular.module('starter')
   .factory('GeoFactory', function(){
     var lat = 0;
     var lon = 0;
-    var dish = "";
-    var bizName = "";
+    var dish = "default-dish";
+    var bizName = "default-name";
     var price = "$";
     var img = "";
     // sett info
     var setLat = function(val){lat = val;};
-    var setLon = function(val){lat = val;};
+    var setLon = function(val){lon = val;};
     var setDish = function(val){dish = val;};
     var setBizName = function(val){bizName = val;};
     var setPrice = function(val){price = val};
@@ -57,10 +57,10 @@ angular.module('starter')
         $cordovaGeolocation
           .getCurrentPosition()
           .then(function (position) {
+            // alert(position.coords.latitude);
             GeoFactory.setLat(position.coords.latitude);
-            console.log(position.coords.latitude);
+            // alert(position.coords.longitude);
             GeoFactory.setLon(position.coords.longitude);
-            console.log(position.coords.longitude);
           }, function(err) {
             console.log('centerOnMe() failure');
           });
@@ -117,9 +117,9 @@ angular.module('starter')
       };
       $cordovaCamera.getPicture(options).then(function(imageData) {
         GeoFactory.setImg(imageData);
-        alert(GeoFactory.getImg());
-        alert(GeoFactory.getLat());
-        alert(GeoFactory.getLon());
+        // alert(GeoFactory.getImg());
+        // alert(GeoFactory.getLat());
+        // alert(GeoFactory.getLon());
         // syncArray.$add({
         //   image: imageData
         // }).then(function() {
@@ -131,7 +131,3 @@ angular.module('starter')
     }
 
   });
-
-  // .controller('MarkerRemoveCtrl', function($scope, $ionicLoading) {
-    
-  // });
