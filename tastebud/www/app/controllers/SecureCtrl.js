@@ -35,7 +35,7 @@ angular.module('starter')
             getImg: getImg
     }   
  })
-  .controller("SecureCtrl", function($scope, $ionicHistory, $firebaseArray, $cordovaCamera, GeoFactory) {
+  .controller("SecureCtrl", function($scope, $ionicHistory, $firebaseArray, $cordovaCamera, $ionicLoading, $cordovaGeolocation, GeoFactory) {
 
     $ionicHistory.clearHistory();
 
@@ -51,7 +51,56 @@ angular.module('starter')
       $scope.images = syncArray;
     } else {
       $state.go("app.auth");
-    }
+    };
+
+    $scope.centerOnMe= function(){
+        $cordovaGeolocation
+          .getCurrentPosition()
+          .then(function (position) {
+            GeoFactory.setLat(position.coords.latitude);
+            console.log(position.coords.latitude);
+            GeoFactory.setLon(position.coords.longitude);
+            console.log(position.coords.longitude);
+          }, function(err) {
+            console.log('centerOnMe() failure');
+          });
+
+        // var watchOptions = {
+        //   frequency : 1000,
+        //   timeout : 3000,
+        //   enableHighAccuracy: false // may cause errors if true
+        // };
+
+        // var watch = $cordovaGeolocation.watchPosition(watchOptions);
+        // watch.then(
+        //   null,
+        //   function(err) {
+        //     console.log('watch() failure');
+        //   },
+        //   function(position) {
+        //     var lat  = position.coords.latitude
+        //     var long = position.coords.longitude
+        // });
+
+        // watch.clearWatch();
+        // // OR
+        // $cordovaGeolocation.clearWatch(watch)
+        //   .then(function(result) {
+        //     // success
+        //     }, function (error) {
+        //     // error
+        // });
+    //   // $ionicLoading.show({
+    //   //   template: 'Loading...'
+    //   // });
+
+    //   navigator.geolocation.getCurrentPosition(function(position) {
+    //     GeoFactory.setLat(position.coords.latitude);
+    //     GeoFactory.setLon(position.coords.longitude);
+    //     console.log('position: ', position.coords.latitude, position.coords.longitude);
+    //     // $ionicLoading.hide();
+    //   });
+    };
 
     $scope.upload = function() {
 
@@ -69,6 +118,8 @@ angular.module('starter')
       $cordovaCamera.getPicture(options).then(function(imageData) {
         GeoFactory.setImg(imageData);
         alert(GeoFactory.getImg());
+        alert(GeoFactory.getLat());
+        alert(GeoFactory.getLon());
         // syncArray.$add({
         //   image: imageData
         // }).then(function() {
@@ -79,23 +130,8 @@ angular.module('starter')
       });
     }
 
-  })
-
-  .controller('MarkerRemoveCtrl', function($scope, $ionicLoading) {
-    $scope.centerOnMe= function(){
-      $scope.positions = [];
-        
-      $ionicLoading.show({
-        template: 'Loading...'
-      });
-
-      navigator.geolocation.getCurrentPosition(function(position) {
-        var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-        console.log('position: ', position);
-        $scope.positions.push({lat: pos.k,lng: pos.B});
-        console.log(pos);
-        $scope.map.setCenter(pos);
-        $ionicLoading.hide();
-      });
-    };
   });
+
+  // .controller('MarkerRemoveCtrl', function($scope, $ionicLoading) {
+    
+  // });

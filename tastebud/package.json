@@ -22,6 +22,7 @@
   },
   "cordovaPlugins": [
     "org.apache.cordova.camera",
-    "org.apache.cordova.inappbrowser"
+    "org.apache.cordova.inappbrowser",
+    "org.apache.cordova.geolocation"
   ]
 }
