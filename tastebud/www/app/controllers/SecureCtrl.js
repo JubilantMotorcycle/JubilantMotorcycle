@@ -17,6 +17,19 @@ angular.module('starter')
       $state.go("app.auth");
     };
 
+    $scope.centerOnMe= function(){
+        $cordovaGeolocation
+          .getCurrentPosition()
+          .then(function (position) {
+            // alert(position.coords.latitude);
+            GeoFactory.setLat(position.coords.latitude);
+            // alert(position.coords.longitude);
+            GeoFactory.setLon(position.coords.longitude);
+          }, function(err) {
+            console.log('centerOnMe() failure');
+          });
+    };
+
     $scope.upload = function() {
 
       var options = {

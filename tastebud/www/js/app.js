@@ -40,6 +40,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         'discover-tab': {
           templateUrl: "app/partials/discovery-partial.html",
           controller: "CardsCtrl",
+          cache: false,
         }
       }
     });
