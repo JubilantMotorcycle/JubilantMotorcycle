@@ -1,6 +1,6 @@
 angular.module('starter')
-.controller('CardsCtrl', function($scope, $ionicHistory, $firebaseArray, TDCardDelegate) {
-  console.log('CARDS CTRL');
+.controller('CardsCtrl', function($scope, $ionicHistory, $firebase, $firebaseArray, GeoFactory, TDCardDelegate) {
+
   $ionicHistory.clearHistory();
 
   $scope.images = [];
@@ -9,16 +9,44 @@ angular.module('starter')
   if(fbAuth) {
     var imageRef = fb.child("tasties/");
     // var userReference = fb.child("users/" + fbAuth.uid);
+
+    $scope.cards = [];
+
     var syncArray = $firebaseArray(imageRef.child("images"));
-    // var syncArray = $firebaseArray(userReference.child("images"));
-    $scope.images = syncArray;
+    syncArray.$loaded(function(){
+
+      GeoFactory.centerOnMe();
+
+      $scope.images = syncArray;
+
+      var locations = {
+        "current": [37.7838175, -122.40924629999998],
+      };
+
+      var center = locations["current"];
+
+      // Query radius
+      var radiusInKm = 1.6;
+
+      // Create a new GeoQuery instance
+      var geoQuery = geoFire.query({
+        center: center,
+        radius: radiusInKm
+      });
+
+      geoQuery.on("key_entered", function(key, location, distance) {
+        var keyL = $scope.images.$keyAt(parseInt(key));
+        var memo = $scope.images.$getRecord(keyL);
+        console.log(memo);
+        memo.miles = (distance / 1.6).toFixed(2);
+        $scope.cards.push(memo);
+      });
+
+    });
   } else {
       $state.go("app.auth");
   }
 
-  $scope.cards = $scope.images;
-
-  console.log('array', $scope.cards);
   // Array.prototype.slice.call($scope.images, 0);
 
   $scope.cardDestroyed = function(index) {
