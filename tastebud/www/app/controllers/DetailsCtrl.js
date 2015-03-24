@@ -36,6 +36,7 @@ angular.module('starter')
         name: $scope.dish.restaurant,
         price: GeoFactory.getPrice()
       }).then(function() {
+        alert("Success", GeoFactory.getLat(), GeoFactory.getLon());
         // alert("Image has been uploaded");
       }).catch(function(){
         alert("Failure Uploading");

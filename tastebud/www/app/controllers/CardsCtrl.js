@@ -14,6 +14,9 @@ angular.module('starter')
 
     var syncArray = $firebaseArray(imageRef.child("images"));
     syncArray.$loaded(function(){
+
+      GeoFactory.centerOnMe();
+
       $scope.images = syncArray;
 
       var locations = {
@@ -34,6 +37,7 @@ angular.module('starter')
       geoQuery.on("key_entered", function(key, location, distance) {
         var keyL = $scope.images.$keyAt(parseInt(key));
         var memo = $scope.images.$getRecord(keyL);
+        console.log(memo);
         memo.miles = (distance / 1.6).toFixed(2);
         $scope.cards.push(memo);
       });

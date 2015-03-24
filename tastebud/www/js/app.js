@@ -88,7 +88,7 @@ app.directive('noScroll', function($document) {
   }
 });
 
-app.factory('GeoFactory', function(){
+app.factory('GeoFactory', function($cordovaGeolocation){
   var lat = 0;
   var lon = 0;
   var dish = "default-dish";
@@ -110,12 +110,25 @@ app.factory('GeoFactory', function(){
   var getPrice = function(){return price;};
   var getImg = function(){return img;};
 
+  var centerOnMe= function(cb){
+      $cordovaGeolocation
+        .getCurrentPosition()
+        .then(function (position) {
+          alert(position.coords.latitude, position.coords.longitude);
+          lat = position.coords.latitude;
+          lon = position.coords.longitude;
+        }, function(err) {
+          console.log('centerOnMe() failure');
+        });
+  };
+
   return {setLat: setLat,
           setLon: setLon,
           setDish: setDish,
           setBizName: setBizName,
           setPrice: setPrice,
           setImg: setImg,
+          centerOnMe: centerOnMe,
           getLat: getLat,
           getLon: getLon,
           getDish: getDish,
